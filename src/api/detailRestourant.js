@@ -1,4 +1,5 @@
 import axios from "axios"
+import { RAPID_API_KEY, RAPID_API_HOST } from "../../env";
 
 export const DetailRestourant = async (id) => {
     const check = localStorage.getItem('DetailRestourant');
@@ -10,8 +11,8 @@ export const DetailRestourant = async (id) => {
                 method: 'GET',
                 url: 'https://travel-advisor.p.rapidapi.com/restaurants/get-details',
                 headers: {
-                    'x-rapidapi-key': 'd12ac72316msh83c3e7aa7b6586cp1dbe2fjsnf8360065335b',
-                    'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
+									'x-rapidapi-key': {RAPID_API_KEY},
+									'x-rapidapi-host': {RAPID_API_HOST},
                 },
                 params: {
                     location_id: `${id}`,
